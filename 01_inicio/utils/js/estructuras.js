@@ -114,7 +114,7 @@ Pedir por consola dos numeros y sacar consola todos
 los numeros entre ellos
 6 10*/
 
-let numeroIntroducido = prompt("introduce numero");
+/* let numeroIntroducido = prompt("introduce numero");
 
 if (!isNaN(Number(numeroIntroducido)) && numeroIntroducido > 0) {
   while (numeroIntroducido > 0) {
@@ -143,3 +143,22 @@ while (max > min) {
   console.log(max);
   max--;
 }
+ */
+
+// for -- repeticiones sobre estrucutar --> array
+let numeros = [1, 2, 3, 45, 6, 7, 67, 8, 6]; // number
+/* console.log(numeros[0]);
+console.log(numeros.length);
+
+for (let index = 0; index < numeros.length; index++) {
+  console.log(numeros[index]);
+} */
+
+//let posicion = 0;
+numeros.forEach((element, indice) => {
+  if (indice % 2 != 0) {
+    console.log(element);
+  }
+  //posicion++;
+  // solo quiero sacar los que en estan en posiciones pares
+});
