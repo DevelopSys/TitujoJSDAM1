@@ -61,7 +61,7 @@ indicando el error y el programa parará
 tras realizar todas las operaciones de los números y saltará una alerta
 indicando de ello
 */
-
+/* 
 let numero1 = prompt("Introduce operador uno");
 let numero2 = prompt("Introduce operador dos");
 
@@ -83,18 +83,15 @@ if (
       break;
     case "multiplicacion":
       resultado = numero1 * numero2;
-
       break;
     case "division":
       resultado = numero1 / numero2;
-
       break;
-
     default:
       console.log("operacion desconocida");
       break;
   }
-  resultado > 0
+  resultado >= 0
     ? alert(`La ${operacion} entre ${numero1} y ${numero2} es ${resultado}`)
     : alert("resultado negativo");
 } else {
@@ -103,3 +100,46 @@ if (
 
 //let numeroTraducido = (Number)numero
 isNaN(Number(numero1)) ? console.log("es un NAN") : console.log("es un numero");
+ */
+
+/*
+Pedir un número por Prompt y mostrar por consola todos 
+los números desde el introducido hasta 0. 
+En el caso de ser un número negativo saltará una alerta
+9
+
+Siempre hay que comprobar si es un número lo introducido
+
+Pedir por consola dos numeros y sacar consola todos 
+los numeros entre ellos
+6 10*/
+
+let numeroIntroducido = prompt("introduce numero");
+
+if (!isNaN(Number(numeroIntroducido)) && numeroIntroducido > 0) {
+  while (numeroIntroducido > 0) {
+    console.log(numeroIntroducido);
+    numeroIntroducido--;
+  }
+} else {
+  console.log("numero incorrecto");
+}
+
+let numeroUno = prompt("introduce numero");
+let numeroDos = prompt("introduce numero");
+
+let max, min;
+if (numeroDos > numeroUno) {
+  max = numeroDos;
+  min = numeroUno;
+} else if (numeroDos < numeroUno) {
+  max = numeroUno;
+  min = numeroDos;
+} else {
+  alert("los numeros son iguales");
+}
+
+while (max > min) {
+  console.log(max);
+  max--;
+}
