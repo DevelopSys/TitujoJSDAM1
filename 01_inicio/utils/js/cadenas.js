@@ -39,7 +39,7 @@ let subFrase = frase.slice(0, 5);
 // borja.martin@gmail.com
 // console.log(subFrase);
 
-let correo = prompt("Por favor introduce un correo electronico");
+/* let correo = prompt("Por favor introduce un correo electronico");
 let numeroArrobas = 0;
 let posicionArroba = 0;
 for (let index = 0; index < correo.length; index++) {
@@ -53,4 +53,19 @@ if (numeroArrobas == 1) {
   // borja@gmail.com
   let dominio = correo.slice(posicionArroba + 1, correo.length);
   console.log(dominio);
+} */
+
+// borja @ borja.com
+//[borja,borja.com]
+let correo = prompt("Por favor introduce un correo electronico");
+let partesCorreo = correo.split("@"); // [borja,borja.com]
+if (partesCorreo.length == 2) {
+  let dominio = partesCorreo[1].split("."); // [borja,com]
+  if (dominio.length == 2 && (dominio[1] == "es" || dominio[1] == "com")) {
+    console.log("correo valido");
+  } else {
+    console.log("correo invalido");
+  }
+} else {
+  console.log("correo invalido");
 }
