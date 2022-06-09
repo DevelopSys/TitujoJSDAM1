@@ -30,9 +30,51 @@ console.log(equipos); */
 // borrar un elemento
 // foreach --> if busco el elemento
 // filter --> filtrar por x condiciones
-
+/* 
 equipos = ["madrid", "barsa", "sevilla", "atletico", "getafe"];
 equipos = equipos.filter((item) => {
   return item != "sevilla" && item.length == 5;
 });
-console.log(equipos);
+console.log(equipos); */
+
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let posicion = 0;
+while (posicion < numeros.length) {
+  console.log(numeros[posicion]);
+  posicion++;
+}
+
+for (let index = 0; index < numeros.length; index++) {
+  console.log(numeros[index]);
+}
+
+numeros.forEach((element) => {
+  console.log(element);
+});
+
+numeros.forEach((element) => {
+  console.log(element + 1);
+});
+let suma = 0;
+numeros.forEach((element) => {
+  suma += element;
+});
+console.log("La media de los elementos es: " + suma / numeros.length);
+
+let arrayAleatorios = [];
+
+for (let index = 0; index < 20; index++) {
+  arrayAleatorios[index] = Math.random() * 20;
+}
+
+_.shuffle(arrayAleatorios);
+
+arrayAleatorios.forEach((element) => {
+  console.log(element);
+});
+
+_.shuffle(arrayAleatorios);
+
+arrayAleatorios.forEach((element) => {
+  console.log(element);
+});
