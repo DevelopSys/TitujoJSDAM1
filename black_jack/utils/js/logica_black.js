@@ -26,5 +26,20 @@ iniciarBaraja();
 baraja = _.shuffle(baraja);
 mostrarBaraja();
 
-let aleatorio = Math.random() * 52;
-console.log(aleatorio);
+// este numero será la posicion de la carta que obtengo
+// sacar la carta obtenida y su valor Carta: 10J Valor: 10
+// sacar la carta obtenida y su valor Carta: 1J Valor: 1
+// sacar la carta obtenida y su valor Carta: KJ Valor: 10
+
+function calcularValor(carta) {
+  return carta.substring(0, carta.length - 1);
+}
+
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+console.log(calcularValor(baraja.pop(parseInt(Math.random() * 53))));
+
+console.log(baraja);
