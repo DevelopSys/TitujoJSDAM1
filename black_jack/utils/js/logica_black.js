@@ -25,3 +25,6 @@ function mostrarBaraja() {
 iniciarBaraja();
 baraja = _.shuffle(baraja);
 mostrarBaraja();
+
+let aleatorio = Math.random() * 52;
+console.log(aleatorio);
