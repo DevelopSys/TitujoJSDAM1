@@ -29,7 +29,7 @@ console.log(asignaturasSegundo);
 // id
 
 let boton = document.getElementById("boton_agregar");
-// HTMLElement
+// HTMLElement (el primero encontrado)
 console.log(boton);
 
 // hacer un array de 5 palabras

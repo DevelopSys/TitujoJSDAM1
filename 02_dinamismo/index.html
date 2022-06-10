@@ -22,31 +22,37 @@
             Esto es un ejemplo de texto escrito desde el DOM manual de la página
           </p>
           <h3>Primero</h3>
-          <ul class="list-group">
-            <li>Sistemas</li>
-            <li>Programación</li>
-            <li>Base de datos</li>
-            <li>FOL</li>
-            <li>Lenguaje de marcas</li>
+          <ul class="list-group" id="lista_primeros">
+            <li class="list-group-item">Sistemas</li>
+            <li class="list-group-item">Programación</li>
+            <li class="list-group-item">Base de datos</li>
+            <li class="list-group-item">FOL</li>
+            <li class="list-group-item">Lenguaje de marcas</li>
           </ul>
 
           <h3>Segundo</h3>
           <ul>
-            <li class="list-group-item">Programación Multimedia</li>
-            <li class="list-group-item">Programacion Servicios</li>
-            <li class="list-group-item">Sistemas Gestión</li>
-            <li class="list-group-item">Desarrollo Interfaces</li>
-            <li class="list-group-item">Empresa</li>
-            <li class="list-group-item">Inglés</li>
-            <li class="list-group-item">Acceso a datos</li>
+            <li>Programación Multimedia</li>
+            <li>Programacion Servicios</li>
+            <li>Sistemas Gestión</li>
+            <li>Desarrollo Interfaces</li>
+            <li>Empresa</li>
+            <li>Inglés</li>
+            <li>Acceso a datos</li>
           </ul>
         </div>
-        <div class="col-4 m-4">
+        <div class="col-4">
           <h2>Acciones</h2>
-          <button id="boton_agregar" class="btn btn-primary">Agregar</button>
+          <button class="btn btn-primary" id="boton_agregar">Agregar</button>
+          <input
+            type="text"
+            id="texto_li"
+            class="form-control"
+            placeholder="introduce el nombre del nodo"
+          />
         </div>
       </div>
     </div>
-    <script src="./utils/js/dinamismo.js"></script>
+    <script src="./utils/js/eventos.js"></script>
   </body>
 </html>
