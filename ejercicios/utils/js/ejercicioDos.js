@@ -1,3 +1,5 @@
+let parrafoRGB = document.querySelector("#rgb");
+let parrafoColor = document.querySelector("#parrafo_color");
 let colorR = document.querySelector("#r");
 let colorG = document.querySelector("#g");
 let colorB = document.querySelector("#b");
@@ -16,7 +18,14 @@ colorB.addEventListener("change", () => {
 });
 
 function actualizarColores() {
-  console.log(`rgb(${colorR.value},${colorG.value},${colorB.value})`);
+  /*parrafoColor.setAttribute(
+      "style",
+      `background-color: rgb(${colorR.value},${colorG.value},${colorB.value})`
+    );*/
+  parrafoColor.style.backgroundColor(
+    `rgb(${colorR.value},${colorG.value},${colorB.value})`
+  );
+  parrafoRGB.innerText = `El color es: rgb(${colorR.value},${colorG.value},${colorB.value})`;
 }
 
 console.log(valorR);
