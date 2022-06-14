@@ -10,6 +10,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link href="./utils/css/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.4/underscore-umd-min.js"></script>
 
     <title>BlackJack</title>
@@ -17,6 +18,24 @@
   <body>
     <div class="container p-4">
       <h1 style="text-align: center">Bienvenido al blackjack</h1>
+      <button class="btn btn-primary" id="boton_iniciar">
+        Iniciar partida
+      </button>
+      <button class="btn btn-primary" id="boton_pedir">Pedir carta</button>
+      <button class="btn btn-primary" id="boton_plantar">Plantarse</button>
+      <button class="btn btn-primary" id="boton_reiniciar">
+        Reiniciar partida
+      </button>
+
+      <div id="contenedor_j1" class="p-4">
+        <p>Nombre: <span></span>. Puntos: <bold>0</bold></p>
+        <div id="cartas_j1" class="contenero_cartas"></div>
+      </div>
+
+      <div id="contenedor_j2" class="p-4">
+        <p>Nombre: <span>Banca</span> Puntos: <bold>0</bold></p>
+        <div id="cartas_j2" class="contenero_cartas"></div>
+      </div>
     </div>
 
     <script src="./utils/js/logica_black.js"></script>

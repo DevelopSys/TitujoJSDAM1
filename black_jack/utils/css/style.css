@@ -1,0 +1,13 @@
+body{
+    background: darkgreen;
+    color: white;
+}
+
+.carta{
+    width: 50px;
+}
+
+.contendor_cartas{
+    height: 400px;
+}
+

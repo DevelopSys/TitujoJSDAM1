@@ -1,4 +1,11 @@
 let baraja = [];
+let botonInicar = document.querySelector("#boton_iniciar");
+let botonPedir = document.querySelector("#boton_pedir");
+let botonPlantar = document.querySelector("#boton_plantar");
+let botonReiniciar = document.querySelector("#boton_reiniciar");
+let puntosJ1 = document.querySelector("#contenedor_j1 bold");
+let puntosJ2 = document.querySelector("#contenedor_j2 bold");
+let cartasJ1 = document.querySelector("#cartas_j1");
 
 function iniciarBaraja() {
   let palos = ["T", "C", "D", "P"];
@@ -16,21 +23,42 @@ function iniciarBaraja() {
       }
     }
   }
-}
 
+  baraja = _.shuffle(baraja);
+}
 function mostrarBaraja() {
   console.log(baraja);
 }
-
-iniciarBaraja();
-baraja = _.shuffle(baraja);
-mostrarBaraja();
+function calcularValor(carta) {
+  return carta.substring(0, carta.length - 1);
+}
 
 // este numero será la posicion de la carta que obtengo
 // sacar la carta obtenida y su valor Carta: 10J Valor: 10
 // sacar la carta obtenida y su valor Carta: 1J Valor: 1
 // sacar la carta obtenida y su valor Carta: KJ Valor: 10
 
-function calcularValor(carta) {
-  return carta.substring(0, carta.length - 1);
-}
+/*iniciarBaraja();
+
+mostrarBaraja();*/
+
+let nombreJugador = prompt("introduce tu nombre");
+document.querySelector("#contenedor_j1 span").innerText = nombreJugador;
+botonInicar.addEventListener("click", () => {
+  puntosJ1.innerText = 0;
+  puntosJ2.innerText = 0;
+  /* botonPedir.setAttribute("disabled", false); */
+  /*  botonPlantar.setAttribute("disabled", false);
+  botonReiniciar.setAttribute("disabled", false);
+  botonInicar.setAttribute("disabled", true); */
+  iniciarBaraja();
+});
+
+botonPedir.addEventListener("click", () => {
+  let carta = baraja.pop();
+  console.log(carta);
+  let imagenCarta = document.createElement("img");
+  imagenCarta.setAttribute("src", `./utils/images/${carta}.png`);
+  imagenCarta.className = "carta";
+  cartasJ1.appendChild(imagenCarta);
+});
