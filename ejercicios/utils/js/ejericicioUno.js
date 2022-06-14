@@ -16,11 +16,12 @@ botonMandar.addEventListener("click", () => {
   if (contenido.length == 0 || contenido.length > 255) {
     alert("Tweet invalido, por favor revisalo");
   } else {
+    contador++;
     // anadir una carta al divTweets
     divTweets.innerHTML = `${divTweets.innerHTML} <div class="col">
               <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Tweet </h5>
+                  <h5 class="card-title">Tweet ${contador}</h5>
                   <p class="card-text">
                     ${contenido}
                   </p>
@@ -28,4 +29,6 @@ botonMandar.addEventListener("click", () => {
               </div>
             </div>`;
   }
+  inputTweet.value = "";
+  textoPulsaciones.innerText = `${inputTweet.value.length}/255`;
 });
