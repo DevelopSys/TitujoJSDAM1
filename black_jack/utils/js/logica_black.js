@@ -13,13 +13,17 @@ function iniciarBaraja() {
   for (let index = 0; index < palos.length; index++) {
     for (let index2 = 1; index2 < 14; index2++) {
       if (index2 == 11) {
-        baraja.push("J" + palos[index]);
+        baraja.push(new carta("J" + palos[index], 10));
+        //baraja.push("J" + palos[index]);
       } else if (index2 == 12) {
-        baraja.push("Q" + palos[index]);
+        baraja.push(new carta("Q" + palos[index], 10));
+        //baraja.push("Q" + palos[index]);
       } else if (index2 == 13) {
-        baraja.push("K" + palos[index]);
+        baraja.push(new carta("K" + palos[index], 10));
+        //baraja.push("K" + palos[index]);
       } else {
-        baraja.push(index2 + palos[index]);
+        baraja.push(new carta(index2 + palos[index], index2));
+        //baraja.push(index2 + palos[index]);
       }
     }
   }
@@ -56,9 +60,13 @@ botonInicar.addEventListener("click", () => {
 
 botonPedir.addEventListener("click", () => {
   let carta = baraja.pop();
-  console.log(carta);
+  //console.log(carta);
+  //mostrarBaraja();
   let imagenCarta = document.createElement("img");
-  imagenCarta.setAttribute("src", `./utils/images/${carta}.png`);
+  imagenCarta.setAttribute("src", carta.getRuta);
   imagenCarta.className = "carta";
   cartasJ1.appendChild(imagenCarta);
+
+  // modificar el contador del span del jugador
+  // modificar el contador del span de la banca
 });
