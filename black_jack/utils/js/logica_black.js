@@ -6,6 +6,9 @@ let botonReiniciar = document.querySelector("#boton_reiniciar");
 let puntosJ1 = document.querySelector("#contenedor_j1 bold");
 let puntosJ2 = document.querySelector("#contenedor_j2 bold");
 let cartasJ1 = document.querySelector("#cartas_j1");
+let cartasJ2 = document.querySelector("#cartas_j2");
+let contadorPuntosJ1 = 0;
+let contadorPuntosJ2 = 0;
 
 function iniciarBaraja() {
   let palos = ["T", "C", "D", "P"];
@@ -60,13 +63,37 @@ botonInicar.addEventListener("click", () => {
 
 botonPedir.addEventListener("click", () => {
   let carta = baraja.pop();
-  //console.log(carta);
+  // console.log(carta);
   //mostrarBaraja();
   let imagenCarta = document.createElement("img");
   imagenCarta.setAttribute("src", carta.getRuta);
   imagenCarta.className = "carta";
   cartasJ1.appendChild(imagenCarta);
 
+  contadorPuntosJ1 += carta.getValor;
+
+  puntosJ1.innerText = contadorPuntosJ1;
+
+  setTimeout(() => {
+    if (contadorPuntosJ1 >= 21) {
+      //contadorPuntosJ1 > 21 && alert("has perdido");
+      turnoBanca();
+    }
+  }, 500);
+
   // modificar el contador del span del jugador
   // modificar el contador del span de la banca
 });
+
+function turnoBanca() {
+  console.log("jugando la banca");
+  setInterval(() => {
+    let carta = baraja.pop();
+    let imagenCarta = document.createElement("img");
+    imagenCarta.setAttribute("src", carta.getRuta);
+    imagenCarta.className = "carta";
+    cartasJ2.appendChild(imagenCarta);
+    contadorPuntosJ2 += carta.getValor;
+    puntosJ2.innerText = contadorPuntosJ2;
+  }, 1500);
+}
