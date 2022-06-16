@@ -86,8 +86,11 @@ botonPedir.addEventListener("click", () => {
 });
 
 function turnoBanca() {
-  console.log("jugando la banca");
-  setInterval(() => {
+  let miFuncion = () => {
+    console.log("jugando la banca");
+  };
+  miFuncion();
+  let intervaloBanca = setInterval(() => {
     let carta = baraja.pop();
     let imagenCarta = document.createElement("img");
     imagenCarta.setAttribute("src", carta.getRuta);
@@ -95,5 +98,18 @@ function turnoBanca() {
     cartasJ2.appendChild(imagenCarta);
     contadorPuntosJ2 += carta.getValor;
     puntosJ2.innerText = contadorPuntosJ2;
+    setTimeout(() => {
+      if (contadorPuntosJ2 >= 17) {
+        clearInterval(intervaloBanca);
+
+        if (contadorPuntosJ1 > contadorPuntosJ2) {
+          alert("Jugador uno ganador");
+        } else if (contadorPuntosJ2 > contadorPuntosJ1) {
+          alert("Jugador dos ganador");
+        } else {
+          alert("Empate");
+        }
+      }
+    }, 500);
   }, 1500);
 }
