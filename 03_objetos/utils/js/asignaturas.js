@@ -40,6 +40,33 @@ let asignaturas = {
 };
 
 let contenedorAsignaturas = document.querySelector(".row");
+let selectCurso = document.querySelector("select");
+
+selectCurso.addEventListener("change", (event) => {
+  let seleccion = event.target.value;
+  let asignaturasFiltradas = asignaturas.results.filter((element) => {
+    if (seleccion == "1" || seleccion == "2") {
+      return element.curso == seleccion;
+    } else if (seleccion == "todas") {
+      return element;
+    }
+  });
+
+  contenedorAsignaturas.innerHTML = "";
+
+  asignaturasFiltradas.forEach((element) => {
+    contenedorAsignaturas.innerHTML = `${contenedorAsignaturas.innerHTML}
+   <div class="col">
+    <div class="card" style="width: 18rem;">
+  <img src="${element.imagen}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${element.nombre}</h5>
+    <p class="card-text">Curso: ${element.curso}</p>
+  </div>
+</div>
+</div>`;
+  });
+});
 
 console.log(asignaturas["ciclo"]);
 console.log(asignaturas.numero);
