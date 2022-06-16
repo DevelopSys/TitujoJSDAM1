@@ -39,10 +39,21 @@ let asignaturas = {
   ciclo: "DAM",
 };
 
+let contenedorAsignaturas = document.querySelector(".row");
+
 console.log(asignaturas["ciclo"]);
 console.log(asignaturas.numero);
 console.log(asignaturas.results);
 console.log(asignaturas.results[0].nombre);
 asignaturas.results.forEach((element) => {
-  console.log(element.nombre);
+  contenedorAsignaturas.innerHTML = `${contenedorAsignaturas.innerHTML}
+   <div class="col">
+    <div class="card" style="width: 18rem;">
+  <img src="${element.imagen}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${element.nombre}</h5>
+    <p class="card-text">Curso: ${element.curso}</p>
+  </div>
+</div>
+</div>`;
 });
